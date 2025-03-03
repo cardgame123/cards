@@ -2,7 +2,7 @@ import pygame
 import random
 
 # Game constants and configurations
-SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 800
 CARD_WIDTH, CARD_HEIGHT = 50, 70
 
 # Card ranks in play and total cards
@@ -65,7 +65,7 @@ back_text_rect = back_text.get_rect(center=(CARD_WIDTH//2, CARD_HEIGHT//2))
 card_back.blit(back_text, back_text_rect)
 
 # Define buttons as rectangles for confirm, call, and reset
-confirm_button = pygame.Rect(SCREEN_WIDTH//2 - 60, SCREEN_HEIGHT - 40, 120, 30)
+confirm_button = pygame.Rect(SCREEN_WIDTH//2 - 60, SCREEN_HEIGHT - 200, 120, 30)
 call_button = pygame.Rect(50, SCREEN_HEIGHT - 40, 100, 30)
 reset_button = pygame.Rect(SCREEN_WIDTH//2 - 50, SCREEN_HEIGHT//2 + 50, 100, 30)
 
@@ -91,8 +91,8 @@ def reset_game():
     # Initialize players and deal cards
     players = [
         Player("You", is_ai=False),
-        Player("AI 1", is_ai=True),
-        Player("AI 2", is_ai=True)
+        Player("John", is_ai=True),
+        Player("Albert", is_ai=True)
     ]
     for i, player in enumerate(players):
         hand_cards = deck[i*CARDS_PER_PLAYER : (i+1)*CARDS_PER_PLAYER]
